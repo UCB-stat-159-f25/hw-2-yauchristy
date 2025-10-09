@@ -1,0 +1,200 @@
+Prompt: How to add a git tag to a repository
+Output: To add a **Git tag** to your repository, follow these simple steps. Git tags are typically used to mark specific points in your repository's history—like a release or a project milestone.
+
+---
+
+### ✅ 1. Make Sure Everything is Committed
+
+First, check that you've committed your latest changes:
+
+```bash
+git status
+```
+
+If anything is uncommitted, stage and commit it:
+
+```bash
+git add .
+git commit -m "Your commit message"
+```
+
+---
+
+### ✅ 2. Add a Tag
+
+#### 🏷️ To create a simple tag (e.g., `repo-basic`):
+
+```bash
+git tag repo-basic
+```
+
+This tags the latest commit on the current branch.
+
+---
+
+### ✅ 3. Push the Tag to GitHub
+
+To push the tag to your remote GitHub repository:
+
+```bash
+git push origin repo-basic
+```
+
+---
+
+### 🧠 Optional: Annotated Tag (More Info, Better for Releases)
+
+```bash
+git tag -a repo-basic -m "Initial version with GW150914 files"
+git push origin repo-basic
+```
+
+This creates an annotated tag with a message (recommended for releases).
+
+---
+
+### ✅ 4. Check Your Tags
+
+List your local tags:
+
+```bash
+git tag
+```
+
+List remote tags (after pushing):
+
+```bash
+git ls-remote --tags origin
+```
+
+---
+
+Let me know if you want to create a GitHub **Release** from that tag next — that’s often the next step!
+
+Prompt: How to check python version of Jupyter notebook
+Output: To check the **Python version used by a Jupyter notebook**, you can do it **from within the notebook itself**.
+
+---
+
+## ✅ Method 1: Use `sys.version` (recommended)
+
+Open a notebook and run this in a cell:
+
+```python
+import sys
+print(sys.version)
+```
+
+### 🧾 Output example:
+
+```
+3.8.12 (default, Oct 12 2021, 13:49:34) 
+[GCC 7.5.0]
+```
+
+This tells you:
+
+* **3.8.12** → Python version
+* Additional details about the build
+
+---
+
+## ✅ Method 2: Use `!python --version` (shell command inside notebook)
+
+```python
+!python --version
+```
+
+### Output:
+
+```
+Python 3.8.12
+```
+
+This runs a shell command in the notebook and returns the version.
+
+---
+
+## ✅ Method 3: Use the `sys` module with `version_info` for structured access
+
+```python
+import sys
+print(sys.version_info)
+```
+
+Output:
+
+```
+sys.version_info(major=3, minor=8, micro=12, releaselevel='final', serial=0)
+```
+
+You can use this if you want to programmatically check versions.
+
+---
+
+## ✅ Optional: Check Kernel Info
+
+You can also find Python version from the Jupyter interface:
+
+* In the Jupyter Notebook toolbar, click **Kernel** → **Change Kernel**.
+* It will show available environments/kernels, often labeled like:
+
+  ```
+  Python 3 (ipykernel) [conda env:ligo]
+  ```
+
+But for the exact version, use `print(sys.version)`.
+
+---
+
+Let me know if you're trying to match the Python version from a specific environment like Binder!
+
+Prompt: How to make badge in Binder for Jupyter notebook
+Output: 
+Creating a Binder badge is super simple! You don’t need to “create” it anywhere — you just add a special Markdown link in your `README.md` that points to Binder with your repo info. Binder automatically generates the badge image.
+
+---
+
+## How to create a Binder badge step-by-step:
+
+---
+
+### 1. Use this Markdown code for the badge:
+
+```markdown
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/<USERNAME>/<REPO>/HEAD?urlpath=lab/tree/<NOTEBOOK_PATH>)
+```
+
+---
+
+### 2. Replace placeholders:
+
+* `<USERNAME>` = your GitHub username or org
+* `<REPO>` = your repository name
+* `<NOTEBOOK_PATH>` = path to the notebook you want to open (e.g., `LOSC_Event_tutorial.ipynb`)
+
+---
+
+### 3. Paste the Markdown into your `README.md`
+
+You can put it at the very top or anywhere in your README.
+
+---
+
+### 4. Commit and push your README.md to GitHub
+
+---
+
+### 5. Test by clicking the badge on GitHub — it should launch Binder, open JupyterLab, and auto-open your notebook!
+
+---
+
+## Bonus: Customize your Binder launch URL
+
+* `HEAD` points to latest default branch commit
+* To launch a different branch/tag, replace `HEAD` with the branch/tag name
+* To open Jupyter Notebook interface instead of JupyterLab, replace `lab/tree` with `tree`
+
+---
+
+If you want, I can generate the exact badge Markdown for your repo — just give me your GitHub username and repo name!
