@@ -3,7 +3,7 @@
 
 _This repository is public so that Binder can find it. All code and data is based on the original [LIGO Center for Open Science Tutorial Repository](https://github.com/losc-tutorial/LOSC_Event_tutorial). This repository is a class exercise that restructures the original LIGO code for improved reproducibility, as a homework assignment for the [Fall 2025 installment of UC Berkeley's Stat 159/259 course, _Reproducible and Collaborative Data Science](https://ucb-stat-159-f25.github.io/site/). Authorship of the original analysis code rests with the LIGO collaboration._
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/yauchristy/hw-2-yauchristy/HEAD?urlpath=lab/tree/LOSC_Event_tutorial.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/UCB-stat-159-f25/hw-2-yauchristy/HEAD?urlpath=lab/tree/LOSC_Event_tutorial.ipynb)
 
 This repository contains the data files and Jupyter notebook used to detect gravitational waves in the LIGO project. The project relied on gravitation-waves software packages (https://www.gwosc.org/software/) to analyze strain data from three binary black hole events.
 
